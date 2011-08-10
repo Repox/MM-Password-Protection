@@ -38,6 +38,9 @@
 		
 		public function protect( $input = array() )
 		{
+
+			if(isset($_SERVER['REDIRECT_REMOTE_USER']))
+				list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':', base64_decode(substr($_SERVER['REDIRECT_REMOTE_USER'], 6)));
 			
 			if(!isset($input["parameters"]["username"]))
 				show_error('<strong>Simple Password Protection:</strong> You didn\'t set a username');
