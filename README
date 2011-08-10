@@ -1,7 +1,10 @@
-Simple password protection addon for MojoMotor
+*Simple password protection addon for MojoMotor*
 
 Installation:
 Copy everything into system/mojomotor/third_party
+
+Rename the folder you copied (if you haven't already done so) to 'password' (without the quotes).
+
 You're done.
 
 Usage:
@@ -26,3 +29,17 @@ E-mail: storm@catalystcode.net
 Website: http://catalystcode.net
 
 If you like this addon, please provide me with feedback.
+
+*Troubleshooting*
+PHP Running as CGI:
+To make this addon work for PHP running as CGI you need to create a .htaccess file in the document root (where index.php is).
+Also, mod_rewrite needs to be enabled for Apache.
+The .htaccess file should contain the following two lines:
+
+RewriteEngine On
+RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization},L]
+
+That should do the trick.
+
+
+
