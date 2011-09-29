@@ -1,9 +1,8 @@
 *Simple password protection addon for MojoMotor*
 
 Installation:
-Copy everything into system/mojomotor/third_party
-
-Rename the folder you copied (if you haven't already done so) to 'password' (without the quotes).
+Create the folder system/mojomotor/third_party/password
+Copy contents into system/mojomotor/third_party/password
 
 You're done.
 
